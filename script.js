@@ -1,5 +1,3 @@
-
-
 //computer randomly enters either rock, paper, scissors
 function getComputerChoice(computerChoice){
     
@@ -25,54 +23,54 @@ const computerSelection = getComputerChoice(1,3);
 // paper beats rock, paper losses to scissors
 // scissors beats paper, losses to rock
 
-const playerSelection = "paPer";
+// let the player inter a choice then convert to string+convert to lower case for better compatibility in function
+let Selection = prompt("Please Rock, Paper or scissors");
+const Selection1 = Selection.toString();
+const playerSelection = Selection1.toLowerCase();
 
-function game(){
 
-    let round = 1;
 
     function playRound(playerSelection, computerSelection) {
-        //convert selection toLowerCase
-        const playerSelec = playerSelection.toLowerCase();
-        const computerSelec = computerSelection.toLowerCase();
-        
         //check if player is rock and who wins
-        if(playerSelec === 'rock' && computerSelec === 'scissors'){
-            return result = 'You Lose! Rock beats Scissors'
-        }else if(playerSelec == 'rock' && computerSelec == 'papers'){
+        if(playerSelection == 'rock' && computerSelection == 'Scissors'){
+            return result = 'I Win! Rock beats Scissors'
+        }else if(playerSelection == 'rock' && computerSelection == 'Papers'){
             return result = 'I Lose! Paper beats Rock'
-        }else if(playerSelec == 'rock' && computerSelec == 'rock'){
+        }else if(playerSelection == 'rock' && computerSelection == 'Rock'){
             return result = 'Tie'
         }
 
         //check if player is paper and who wins
-        if(playerSelec == 'paper' && computerSelec == 'scissors'){
+        if(playerSelection == 'paper' && computerSelection == 'Scissors'){
             return result = 'I Lose! Scissors beats Paper'
-        }else if(playerSelec == 'paper' && computerSelec == 'rock'){
-            return result = 'You Lose! Paper beats Rock'
-        }else if(playerSelec == 'paper' && computerSelec == 'papers'){
+        }else if(playerSelection == 'paper' && computerSelection == 'Rock'){
+            return result = 'I Win! Paper beats Rock'
+        }else if(playerSelection == 'paper' && computerSelection == 'Papers'){
             return result = 'Tie'
         }
 
         //check if player is Scissors and who wins
-        if(playerSelec == 'scissors' && computerSelec == 'papers'){
-            return result = 'You Lose! Scissors beats Paper'
-        }else if(playerSelec == 'scissors' && computerSelec == 'rock'){
+        if(playerSelection == 'scissors' && computerSelection == 'Papers'){
+            return result = 'I Win! Scissors beats Paper'
+        }else if(playerSelection == 'scissors' && computerSelection == 'Rock'){
             return result = 'I Lose! Rock beats Scissors'
-        }else if(playerSelec == 'scissors' && computerSelec == 'scissors'){
+        }else if(playerSelection == 'scissors' && computerSelection == 'Scissors'){
             return result = 'Tie'
         }
         
         
+        // code to validate the input...
+        if(playerSelection !== 'rock' || playerSelection !== 'scissors' || playerSelection !== 'paper' ){
+            return result = 'WTF is that, options are Rock, Paper, Scissors!'
+        } 
+        
     }
     
-    playRound(playerSelection, computerSelection);
+    
 
-}
-
-
-
-console.log(game());
+console.log("Player Choose: " +Selection);
+console.log("Computer Choose: " +computerSelection);
+console.log(playRound(playerSelection, computerSelection));
 
 
 
