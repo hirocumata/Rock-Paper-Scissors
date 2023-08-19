@@ -78,7 +78,7 @@ function game(){
                 result = 'WTF is that, options are Rock, Paper, Scissors!'
             } 
             
-            
+            // output round information
             console.log("Player Choose: " +Selection);
             console.log("Computer Choose: " +computerSelection);
             console.log(result);
@@ -92,10 +92,16 @@ function game(){
         playRound(playerSelection, computerSelection, result)
     }
 
+    // output game winner
+    if(scorePlayer > scoreComputer){
+        console.log("Player Won");
+    }else {
+        console.log("Computer Won");
+    }
+
 } //close game function 
 
-
-game();
+game(); // calls game function
 
 
 
